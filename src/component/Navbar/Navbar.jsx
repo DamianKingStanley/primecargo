@@ -196,14 +196,14 @@ const Navbar = () => {
               ) : (
                 <div className="flex space-x-4 pt-4">
                   <Link
-                    to="/login"
+                    to="/admin/login"
                     onClick={closeMenu}
                     className="flex-1 text-center px-4 py-2 border border-blue-600 text-blue-600 rounded-md font-medium"
                   >
                     Login
                   </Link>
                   <Link
-                    to="/register"
+                    to="/admin/register"
                     onClick={closeMenu}
                     className="flex-1 text-center px-4 py-2 bg-blue-600 text-white rounded-md font-medium shadow-sm"
                   >
