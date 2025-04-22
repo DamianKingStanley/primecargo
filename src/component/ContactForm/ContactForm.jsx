@@ -50,7 +50,7 @@ const ContactForm = () => {
 
     try {
       const response = await fetch(
-        "https://tracking-server-d6l5.onrender.com/create-quotes",
+        "https://tracking-server-d6l5.onrender.com/create-quote",
         {
           method: "POST",
           headers: {
@@ -188,7 +188,7 @@ const ContactForm = () => {
                 <div>
                   <label
                     htmlFor="countryOfOrigin"
-                    className="block text-sm font-medium text-gray-700 mb-1 flex items-center"
+                    className="block text-sm font-medium text-gray-700 mb-1  items-center"
                   >
                     <FiGlobe className="mr-2 text-blue-500" />
                     Origin Country
@@ -207,7 +207,7 @@ const ContactForm = () => {
                 <div>
                   <label
                     htmlFor="destinationCountry"
-                    className="block text-sm font-medium text-gray-700 mb-1 flex items-center"
+                    className="block text-sm font-medium text-gray-700 mb-1  items-center"
                   >
                     <FiPackage className="mr-2 text-blue-500" />
                     Destination Country
@@ -229,7 +229,7 @@ const ContactForm = () => {
                 <div className="sm:col-span-1">
                   <label
                     htmlFor="name"
-                    className="block text-sm font-medium text-gray-700 mb-1 flex items-center"
+                    className="block text-sm font-medium text-gray-700 mb-1  items-center"
                   >
                     <FiUser className="mr-2 text-blue-500" />
                     Full Name
@@ -248,7 +248,7 @@ const ContactForm = () => {
                 <div className="sm:col-span-1">
                   <label
                     htmlFor="email"
-                    className="block text-sm font-medium text-gray-700 mb-1 flex items-center"
+                    className="block text-sm font-medium text-gray-700 mb-1  items-center"
                   >
                     <FiMail className="mr-2 text-blue-500" />
                     Email
@@ -267,7 +267,7 @@ const ContactForm = () => {
                 <div className="sm:col-span-1">
                   <label
                     htmlFor="phoneNumber"
-                    className="block text-sm font-medium text-gray-700 mb-1 flex items-center"
+                    className="block text-sm font-medium text-gray-700 mb-1  items-center"
                   >
                     <FiPhone className="mr-2 text-blue-500" />
                     Phone
@@ -288,7 +288,7 @@ const ContactForm = () => {
               <div>
                 <label
                   htmlFor="additionalNotes"
-                  className="block text-sm font-medium text-gray-700 mb-1 flex items-center"
+                  className="block text-sm font-medium text-gray-700 mb-1  items-center"
                 >
                   <FiMessageSquare className="mr-2 text-blue-500" />
                   Additional Notes
