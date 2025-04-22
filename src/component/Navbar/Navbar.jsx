@@ -179,7 +179,7 @@ const Navbar = () => {
               {isLoggedIn ? (
                 <>
                   <Link
-                    to={`/user/profile/${user?._id}`}
+                    to={"/user/profile/"}
                     onClick={closeMenu}
                     className="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50"
                   >
