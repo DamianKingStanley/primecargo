@@ -124,13 +124,13 @@ const Navbar = () => {
             ) : (
               <div className="flex items-center space-x-4">
                 <Link
-                  to="/login"
+                  to="/admin/login"
                   className="px-4 py-2 text-sm font-medium text-blue-600 hover:text-blue-700"
                 >
                   Login
                 </Link>
                 <Link
-                  to="/register"
+                  to="/admin/register"
                   className="px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-blue-600 to-blue-500 rounded-md shadow-sm hover:shadow-md transition-all"
                 >
                   Register

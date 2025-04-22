@@ -29,8 +29,8 @@ const AppContent = () => {
           <Route exact path="/about-us" element={<About />} />
           <Route exact path="/contact-us" element={<ContactUs />} />
           <Route exact path="/request-a-quote" element={<Request />} />
-          <Route exact path="/register" element={<Register />} />
-          <Route exact path="/login" element={<Login />} />
+          <Route exact path="/admin/register" element={<Register />} />
+          <Route exact path="/admin/login" element={<Login />} />
           <Route exact path="/create-package" element={<CreatePost />} />
           <Route exact path="/edit-post/:postId" element={<EditPost />} />
           <Route exact path="/track" element={<TrackAndTrace />} />
