@@ -1,0 +1,141 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  font-family: "Arial", sans-serif;
+  padding-top: 20px;
+}
+
+/* Slide Container */
+.hero-section .slide {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Overlay */
+.hero-section .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  /* background: rgba(48, 25, 8, 0.9); */
+  z-index: 1;
+}
+
+/* Content on Slide */
+.hero-section .content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: white;
+  padding: 0 20px;
+  max-width: 700px;
+}
+
+.hero-section .content h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.hero-section .content p {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Button Styling */
+.HeroSectionBtn {
+  padding: 0.8rem 2rem;
+  background-color: #03086f;
+  border: none;
+  border-radius: 25px;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  width: 50%;
+}
+
+.HeroSectionBtn:hover {
+  background-color: #e65100;
+  transform: scale(1.05);
+}
+
+/* Dots Navigation */
+.hero-section .dots {
+  position: absolute;
+  bottom: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  z-index: 3;
+}
+
+.hero-section .dot {
+  width: 12px;
+  height: 12px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.hero-section .dot:hover {
+  background-color: white;
+  transform: scale(1.2);
+}
+
+.hero-section .dot.active {
+  background-color: white;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .hero-section .content h1 {
+    font-size: 3rem;
+  }
+
+  .hero-section .content p {
+    font-size: 1.25rem;
+  }
+
+  .hero-section .HeroSectionBtn {
+    font-size: 1.2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-section .content h1 {
+    font-size: 3.5rem;
+  }
+
+  .hero-section .content p {
+    font-size: 1.5rem;
+  }
+
+  .HeroSectionBtn {
+    font-size: 1.4rem;
+  }
+}
