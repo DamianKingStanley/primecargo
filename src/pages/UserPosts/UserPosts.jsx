@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { useParams, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const UserPosts = () => {
   const [posts, setPosts] = useState([]);
@@ -9,14 +9,18 @@ const UserPosts = () => {
   const [expandedPostId, setExpandedPostId] = useState(null);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [postToDelete, setPostToDelete] = useState(null);
-  const { userId } = useParams();
+  // const { userId } = useParams();
   const navigate = useNavigate();
 
   useEffect(() => {
+    const userData = JSON.parse(localStorage.getItem("userInformation"));
+
+    const loggedId = userData?.result?.id;
+
     const fetchPosts = async () => {
       try {
         const response = await axios.get(
-          `https://tracking-server-d6l5.onrender.com/posts/${userId}`
+          `https://tracking-server-d6l5.onrender.com/posts/${loggedId}`
         );
         setPosts(response.data);
         setLoading(false);
@@ -26,7 +30,7 @@ const UserPosts = () => {
       }
     };
     fetchPosts();
-  }, [userId]);
+  }, []);
 
   const toggleDetails = (postId) => {
     setExpandedPostId(expandedPostId === postId ? null : postId);
