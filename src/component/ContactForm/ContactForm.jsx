@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+
 import {
   FiCheck,
   FiTruck,
@@ -11,6 +14,15 @@ import {
 } from "react-icons/fi";
 
 const ContactForm = () => {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const user = JSON.parse(localStorage.getItem("userInformation"));
+    if (!user || !user.token) {
+      navigate("/user/login");
+    }
+  }, [navigate]);
+
   const [formData, setFormData] = useState({
     services: {
       doorToDoor: false,
@@ -43,12 +55,18 @@ const ContactForm = () => {
       }));
     }
   };
+  const user = JSON.parse(localStorage.getItem("userInformation"));
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
 
     try {
+      const updatedFormData = {
+        ...formData,
+        user: user?.result?.id, // or user.id depending on how it's stored
+      };
+
       const response = await fetch(
         "https://tracking-server-d6l5.onrender.com/create-quote",
         {
@@ -56,7 +74,7 @@ const ContactForm = () => {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify(formData),
+          body: JSON.stringify(updatedFormData),
         }
       );
 

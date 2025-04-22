@@ -8,7 +8,7 @@ import FeaturedWorks from "../../component/FeaturedWorks/FeaturedWorks";
 import OurClients from "../../component/OurClients/OurClients";
 // import GlobalPresence from "../../component/Reviews/Reviews";
 import TrustedClients from "../../component/TrustedClients/TrustedClients";
-import ContactForm from "../../component/ContactForm/ContactForm";
+// import ContactForm from "../../component/ContactForm/ContactForm";
 const Home = () => {
   return (
     <div className="HomepageBody">
@@ -20,7 +20,7 @@ const Home = () => {
       <OurClients />
       {/* <GlobalPresence /> */}
       <TrustedClients />
-      <ContactForm />
+      {/* <ContactForm /> */}
     </div>
   );
 };
