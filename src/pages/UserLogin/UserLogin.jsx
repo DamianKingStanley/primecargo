@@ -9,11 +9,11 @@ import {
   FiTruck,
 } from "react-icons/fi";
 
-const LogIn = () => {
+const UserLogIn = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [role, setRole] = useState("admin");
+  const [role, setRole] = useState("user");
   const [loginMessage, setLoginMessage] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
@@ -69,7 +69,7 @@ const LogIn = () => {
         <h2 className="mt-6 text-center text-3xl  text-gray-900">
           Prime Cargo Logistics
         </h2>
-        <p className="mt-2 text-center text-sm text-gray-600">Admin Sign In</p>
+        <p className="mt-2 text-center text-sm text-gray-600"> Sign In</p>
       </div>
 
       <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
@@ -235,7 +235,7 @@ const LogIn = () => {
 
             <div className="mt-6">
               <Link
-                to="/admin/register"
+                to="/user/register"
                 className="w-full flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
               >
                 Register now
@@ -248,4 +248,4 @@ const LogIn = () => {
   );
 };
 
-export default LogIn;
+export default UserLogIn;

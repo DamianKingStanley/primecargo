@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FiUser, FiMail, FiLock, FiKey, FiTruck } from "react-icons/fi";
 
-const Register = () => {
+const UserRegister = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     fullname: "",
     email: "",
     password: "",
-    role: "admin",
+    role: "user",
     secretKey: "",
   });
   const [registerMessage, setRegisterMessage] = useState("");
@@ -73,7 +73,7 @@ const Register = () => {
 
       if (response.ok) {
         setRegisterMessage("Registration successful! Redirecting to login...");
-        setTimeout(() => navigate("/admin/login"), 2000);
+        setTimeout(() => navigate("/user/login"), 2000);
       } else {
         const errorData = await response.json();
         setRegisterMessage(errorData.message || "Registration failed");
@@ -92,7 +92,7 @@ const Register = () => {
           <FiTruck className="h-12 w-12 text-blue-600" />
         </div>
         <h2 className="mt-6 text-center text-3xl  text-gray-900">
-          Create your account- Admin
+          Create your account
         </h2>
         <p className="mt-2 text-center text-sm text-gray-600">
           Join Prime Cargo Logistics today
@@ -218,8 +218,8 @@ const Register = () => {
                 onChange={handleChange}
                 className="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md"
               >
-                <option value="admin">Admin</option>
-                {/* <option value="user">User</option> */}
+                {/* <option value="admin">Admin</option> */}
+                <option value="user">User</option>
               </select>
             </div>
 
@@ -301,7 +301,7 @@ const Register = () => {
 
             <div className="mt-6">
               <Link
-                to="/admin/login"
+                to="/user/login"
                 className="w-full flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
               >
                 Sign in
@@ -314,4 +314,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default UserRegister;

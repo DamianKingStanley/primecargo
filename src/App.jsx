@@ -14,6 +14,8 @@ import UserDashboard from "./pages/UserDashboard/UserDashboard";
 import CreatePost from "./pages/CreatePost/CreatePost";
 import EditPost from "./pages/EditPost/EditPost";
 import TrackAndTrace from "./pages/TrackAndTrace/TrackAndTrace";
+import UserRegister from "./pages/UserLogin/UserRegister";
+import UserLogin from "./pages/UserLogin/UserLogin";
 // import GoogleTranslate from "./component/GoogleTranslate/GoogleTranslate";
 
 const AppContent = () => {
@@ -31,6 +33,9 @@ const AppContent = () => {
           <Route exact path="/request-a-quote" element={<Request />} />
           <Route exact path="/admin/register" element={<Register />} />
           <Route exact path="/admin/login" element={<Login />} />
+          <Route exact path="/user/login" element={<UserLogin />} />
+          <Route exact path="/user/register" element={<UserRegister />} />
+
           <Route exact path="/create-package" element={<CreatePost />} />
           <Route exact path="/edit-post/:postId" element={<EditPost />} />
           <Route exact path="/track" element={<TrackAndTrace />} />

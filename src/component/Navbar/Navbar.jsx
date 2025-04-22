@@ -124,13 +124,13 @@ const Navbar = () => {
             ) : (
               <div className="flex items-center space-x-4">
                 <Link
-                  to="/admin/login"
+                  to="/user/login"
                   className="px-4 py-2 text-sm font-medium text-blue-600 hover:text-blue-700"
                 >
                   Login
                 </Link>
                 <Link
-                  to="/admin/register"
+                  to="/user/register"
                   className="px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-blue-600 to-blue-500 rounded-md shadow-sm hover:shadow-md transition-all"
                 >
                   Register
@@ -196,14 +196,14 @@ const Navbar = () => {
               ) : (
                 <div className="flex space-x-4 pt-4">
                   <Link
-                    to="/admin/login"
+                    to="/user/login"
                     onClick={closeMenu}
                     className="flex-1 text-center px-4 py-2 border border-blue-600 text-blue-600 rounded-md font-medium"
                   >
                     Login
                   </Link>
                   <Link
-                    to="/admin/register"
+                    to="/user/register"
                     onClick={closeMenu}
                     className="flex-1 text-center px-4 py-2 bg-blue-600 text-white rounded-md font-medium shadow-sm"
                   >

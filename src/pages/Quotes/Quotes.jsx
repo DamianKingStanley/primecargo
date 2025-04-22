@@ -12,7 +12,11 @@ const UserQuotes = ({ userId, adminMode = false }) => {
     const fetchQuotes = async () => {
       try {
         const userData = JSON.parse(localStorage.getItem("userInformation"));
-        const endpoint = "https://tracking-server-d6l5.onrender.com/get-quote";
+        const endpoint = adminMode
+          ? "https://tracking-server-d6l5.onrender.com/get-quote"
+          : `https://tracking-server-d6l5.onrender.com/getuser-quote/${
+              userId || userData?.result?.id
+            }`;
 
         const response = await fetch(endpoint, {
           headers: {
@@ -22,7 +26,7 @@ const UserQuotes = ({ userId, adminMode = false }) => {
 
         const data = await response.json();
         if (response.ok) {
-          setQuotes(data);
+          setQuotes(data.data); // ✅ Fix here
         } else {
           console.error("Failed to fetch quotes:", data);
         }
@@ -45,22 +49,24 @@ const UserQuotes = ({ userId, adminMode = false }) => {
     return matchesSearch && matchesStatus;
   });
 
-  const handleViewQuote = (quoteId) => {
-    // Navigate to quote detail view or show modal
-    console.log("View quote:", quoteId);
-  };
+  // const handleViewQuote = (quoteId) => {
+  //   console.log("View quote:", quoteId);
+  // };
 
   const handleDeleteQuote = async (quoteId) => {
     if (!window.confirm("Are you sure you want to delete this quote?")) return;
 
     try {
       const userData = JSON.parse(localStorage.getItem("userInformation"));
-      const response = await fetch(`/api/quotes/${quoteId}`, {
-        method: "DELETE",
-        headers: {
-          Authorization: `Bearer ${userData.token}`,
-        },
-      });
+      const response = await fetch(
+        `https://tracking-server-d6l5.onrender.com/quote/${quoteId}`,
+        {
+          method: "DELETE",
+          headers: {
+            Authorization: `Bearer ${userData.token}`,
+          },
+        }
+      );
 
       if (response.ok) {
         setQuotes(quotes.filter((quote) => quote._id !== quoteId));
@@ -162,12 +168,7 @@ const UserQuotes = ({ userId, adminMode = false }) => {
                 >
                   Date
                 </th>
-                <th
-                  scope="col"
-                  className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                >
-                  Status
-                </th>
+
                 <th
                   scope="col"
                   className="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider"
@@ -228,27 +229,14 @@ const UserQuotes = ({ userId, adminMode = false }) => {
                       </div>
                     </div>
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    <span
-                      className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${
-                        quote.status === "completed"
-                          ? "bg-green-100 text-green-800"
-                          : quote.status === "rejected"
-                          ? "bg-red-100 text-red-800"
-                          : "bg-yellow-100 text-yellow-800"
-                      }`}
-                    >
-                      {quote.status.charAt(0).toUpperCase() +
-                        quote.status.slice(1)}
-                    </span>
-                  </td>
+
                   <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                    <button
+                    {/* <button
                       onClick={() => handleViewQuote(quote._id)}
                       className="text-blue-600 hover:text-blue-900 mr-4"
                     >
                       <FaEye className="inline mr-1" /> View
-                    </button>
+                    </button> */}
                     <button
                       onClick={() => handleDeleteQuote(quote._id)}
                       className="text-red-600 hover:text-red-900"

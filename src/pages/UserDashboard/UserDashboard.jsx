@@ -19,6 +19,22 @@ const UserDashboard = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    const CheckProfile = async () => {
+      try {
+        const userData = JSON.parse(localStorage.getItem("userInformation"));
+        if (!userData?.token || !userData) {
+          navigate("/login");
+          return;
+        }
+      } catch (error) {
+      } finally {
+      }
+    };
+
+    CheckProfile();
+  }, [navigate]);
+
+  useEffect(() => {
     const fetchUserProfile = async () => {
       try {
         const userData = JSON.parse(localStorage.getItem("userInformation"));
