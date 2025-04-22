@@ -107,7 +107,7 @@ const Navbar = () => {
             {isLoggedIn ? (
               <div className="flex items-center space-x-4">
                 <Link
-                  to={`/user/profile/${user?._id}`}
+                  to={`/user/profile`}
                   className="flex items-center space-x-1 text-sm font-medium text-gray-700 hover:text-blue-500"
                 >
                   <FaUserCircle className="text-lg" />

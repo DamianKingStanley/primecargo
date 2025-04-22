@@ -46,7 +46,7 @@ const LogIn = () => {
         const data = await response.json();
         storeUserData(data);
         setIsLoading(false);
-        navigate(role === "admin" ? "/dashboard" : "/");
+        navigate(role === "admin" ? "/create-package" : "/");
       } else {
         const errorResponseData = await response.json();
         setLoginMessage(

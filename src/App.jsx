@@ -42,11 +42,7 @@ const AppContent = () => {
           <Route exact path="/edit-post/:postId" element={<EditPost />} />
           <Route exact path="/track" element={<TrackAndTrace />} />
 
-          <Route
-            exact
-            path="/user/profile/:userId"
-            element={<UserDashboard />}
-          />
+          <Route exact path="/user/profile" element={<UserDashboard />} />
         </Routes>
         <Footer />
       </BrowserRouter>

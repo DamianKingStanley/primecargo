@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import {
   FaUserCircle,
   FaBox,
@@ -12,7 +12,7 @@ import UserPosts from "../UserPosts/UserPosts";
 import Quotes from "../Quotes/Quotes";
 
 const UserDashboard = () => {
-  const { userId } = useParams();
+  // const { userId } = useParams();
   const [user, setUser] = useState(null);
   const [activeTab, setActiveTab] = useState("packages");
   const [loading, setLoading] = useState(true);
@@ -43,8 +43,10 @@ const UserDashboard = () => {
           return;
         }
 
+        const loggedId = userData?.result?.id;
+
         const response = await fetch(
-          `https://tracking-server-d6l5.onrender.com/user/profile/${userId}`,
+          `https://tracking-server-d6l5.onrender.com/user/profile/${loggedId}`,
           {
             headers: {
               Authorization: `Bearer ${userData.token}`,
@@ -66,7 +68,7 @@ const UserDashboard = () => {
     };
 
     fetchUserProfile();
-  }, [userId, navigate]);
+  }, [navigate]);
 
   const handleLogout = () => {
     localStorage.removeItem("userInformation");
@@ -80,6 +82,8 @@ const UserDashboard = () => {
       </div>
     );
   }
+
+  const loggedId = user?.id;
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -187,8 +191,8 @@ const UserDashboard = () => {
 
         {/* Tab Content */}
         <div className="bg-white rounded-xl shadow-md overflow-hidden">
-          {activeTab === "packages" && <UserPosts userId={userId} />}
-          {activeTab === "quotes" && <Quotes userId={userId} />}
+          {activeTab === "packages" && <UserPosts userId={loggedId} />}
+          {activeTab === "quotes" && <Quotes userId={loggedId} />}
           {activeTab === "allQuotes" && user?.role === "admin" && (
             <Quotes adminMode={true} />
           )}
