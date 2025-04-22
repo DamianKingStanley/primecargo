@@ -6,7 +6,7 @@ import ServicesSection from "../../component/ServicesSection/ServicesSection";
 import LogisticsFeatures from "../../component/LogisticsFeatures/LogisticsFeatures";
 import FeaturedWorks from "../../component/FeaturedWorks/FeaturedWorks";
 import OurClients from "../../component/OurClients/OurClients";
-import GlobalPresence from "../../component/Reviews/Reviews";
+// import GlobalPresence from "../../component/Reviews/Reviews";
 import TrustedClients from "../../component/TrustedClients/TrustedClients";
 import ContactForm from "../../component/ContactForm/ContactForm";
 const Home = () => {
@@ -15,10 +15,10 @@ const Home = () => {
       <HeroSection />
       <WriteUpImage />
       <ServicesSection />
-      <FeaturedWorks />
       <LogisticsFeatures />
+      <FeaturedWorks />
       <OurClients />
-      <GlobalPresence />
+      {/* <GlobalPresence /> */}
       <TrustedClients />
       <ContactForm />
     </div>
