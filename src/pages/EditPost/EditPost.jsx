@@ -89,7 +89,7 @@ const EditPost = () => {
       );
 
       if (response.status === 200) {
-        navigate(`/user/profile/${userId}`);
+        navigate("/user/profile/");
       } else {
         setError("Failed to update post");
       }

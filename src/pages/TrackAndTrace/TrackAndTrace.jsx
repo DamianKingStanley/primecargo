@@ -286,7 +286,11 @@ const TrackAndTrace = () => {
                         ? "bg-green-500"
                         : packageDetails.status === "In Transit"
                         ? "bg-yellow-500"
-                        : "bg-blue-500"
+                        : packageDetails.status === "Delayed"
+                        ? "bg-blue-500"
+                        : packageDetails.status === "Lost"
+                        ? "bg-red-500"
+                        : "bg-brown-300"
                     }`}
                   ></div>
                   <span className="font-medium">{packageDetails.status}</span>
