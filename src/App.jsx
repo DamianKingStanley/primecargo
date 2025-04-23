@@ -17,7 +17,7 @@ import TrackAndTrace from "./pages/TrackAndTrace/TrackAndTrace";
 import UserRegister from "./pages/UserLogin/UserRegister";
 import UserLogin from "./pages/UserLogin/UserLogin";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
-// import GoogleTranslate from "./component/GoogleTranslate/GoogleTranslate";
+import GoogleTranslate from "./component/GoogleTranslate/GoogleTranslate";
 
 const AppContent = () => {
   const { theme } = useContext(ThemeContext);
@@ -25,7 +25,7 @@ const AppContent = () => {
     <div className={theme}>
       <BrowserRouter>
         <FloatingChat />
-        {/* <GoogleTranslate /> */}
+        <GoogleTranslate />
         <Navbar />
         <Routes>
           <Route exact path="*" element={<NotFoundPage />} />
