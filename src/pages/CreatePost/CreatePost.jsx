@@ -1,20 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 // Function to generate a random code (mixture of letters and numbers) with "FRC-" prefix
 const generateCode = () => {
-  const chars =
-    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-  let code = "FRC-"; // Start with FRC-
+  const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789";
+  let code = "PC-";
   for (let i = 0; i < 8; i++) {
     const randomIndex = Math.floor(Math.random() * chars.length);
     code += chars[randomIndex];
   }
   return code;
 };
-
-// Example usage
-// console.log(generateCode());
 
 const CreatePost = () => {
   const [parcelHolder, setParcelHolder] = useState("");
@@ -30,6 +26,28 @@ const CreatePost = () => {
   const [code, setCode] = useState(generateCode()); // Automatically generate code
 
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const CheckProfile = async () => {
+      try {
+        const userData = JSON.parse(localStorage.getItem("userInformation"));
+        if (!userData?.token || !userData) {
+          navigate("/login");
+          return;
+        }
+
+        // Check if the user is an admin
+        if (userData?.result?.role !== "admin") {
+          navigate("/");
+          return;
+        }
+      } catch (error) {
+        console.error("Error checking user profile:", error);
+      }
+    };
+
+    CheckProfile();
+  }, [navigate]);
 
   const handleSubmit = async () => {
     const userData = JSON.parse(localStorage.getItem("userInformation"));
@@ -65,7 +83,7 @@ const CreatePost = () => {
       );
 
       if (response.ok) {
-        const data = await response.json();
+        // const data = await response.json();
         navigate("/create-package");
       } else {
         const errorResponseData = await response.json();
@@ -79,9 +97,12 @@ const CreatePost = () => {
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-100  py-20">
       <div className="w-full max-w-lg bg-white p-8 rounded-lg shadow-lg">
-        <h2 className="text-3xl font-semibold text-center text-gray-800 mb-6">
-          Create a Package
-        </h2>
+        <div className="bg-blue-600 py-6 px-8">
+          <h2 className="text-3xl font-bold text-white">Create New Package</h2>
+          <p className="text-blue-100 mt-1">
+            Fill in the package details below
+          </p>
+        </div>
 
         {errorResponse && (
           <p className="bg-red-100 text-red-700 p-4 mb-4 rounded-md text-center">
@@ -136,7 +157,7 @@ const CreatePost = () => {
               value={currentLocation}
               onChange={(e) => setCurrentLocation(e.target.value)}
               required
-              className="mt-2 w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+              className="mt-2 w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </div>
 
@@ -153,7 +174,7 @@ const CreatePost = () => {
               value={takeOffLocation}
               onChange={(e) => setTakeOffLocation(e.target.value)}
               required
-              className="mt-2 w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+              className="mt-2 w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </div>
 
@@ -170,7 +191,7 @@ const CreatePost = () => {
               value={destination}
               onChange={(e) => setDestination(e.target.value)}
               required
-              className="mt-2 w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+              className="mt-2 w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </div>
 
@@ -186,7 +207,7 @@ const CreatePost = () => {
               id="arrivalDate"
               value={arrivalDate}
               onChange={(e) => setArrivalDate(e.target.value)}
-              className="mt-2 w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+              className="mt-2 w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </div>
 
@@ -201,7 +222,7 @@ const CreatePost = () => {
               id="cargoCategory"
               value={cargoCategory}
               onChange={(e) => setCargoCategory(e.target.value)}
-              className="mt-2 w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+              className="mt-2 w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             >
               <option value="General Cargo">General Cargo</option>
               <option value="Dangerous Goods">Dangerous Goods</option>
@@ -227,7 +248,7 @@ const CreatePost = () => {
               id="arrivalDate"
               value={dateOfQuote}
               onChange={(e) => setDateOfQuote(e.target.value)}
-              className="mt-2 w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+              className="mt-2 w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </div>
 
@@ -244,7 +265,7 @@ const CreatePost = () => {
               value={location}
               onChange={(e) => setLocation(e.target.value)}
               required
-              className="mt-2 w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+              className="mt-2 w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </div>
 
@@ -259,7 +280,7 @@ const CreatePost = () => {
               id="status"
               value={status}
               onChange={(e) => setStatus(e.target.value)}
-              className="mt-2 w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+              className="mt-2 w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             >
               <option value="In Transit">In Transit</option>
               <option value="Delivered">Delivered</option>
@@ -272,7 +293,7 @@ const CreatePost = () => {
           <div className="flex justify-center">
             <button
               type="submit"
-              className="w-full py-3 px-6 bg-orange-600 text-white font-semibold rounded-lg shadow-md hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              className="w-full py-3 px-6 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
             >
               Create Post
             </button>

@@ -4,7 +4,7 @@ import {
   FaUserCircle,
   FaBox,
   FaFileAlt,
-  FaSignOutAlt,
+  // FaSignOutAlt,
   FaTruck,
   FaDollarSign,
 } from "react-icons/fa";
@@ -14,7 +14,7 @@ import Quotes from "../Quotes/Quotes";
 const UserDashboard = () => {
   // const { userId } = useParams();
   const [user, setUser] = useState(null);
-  const [activeTab, setActiveTab] = useState("packages");
+  const [activeTab, setActiveTab] = useState("quotes");
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
@@ -70,10 +70,10 @@ const UserDashboard = () => {
     fetchUserProfile();
   }, [navigate]);
 
-  const handleLogout = () => {
-    localStorage.removeItem("userInformation");
-    navigate("/login");
-  };
+  // const handleLogout = () => {
+  //   localStorage.removeItem("userInformation");
+  //   navigate("/user/login");
+  // };
 
   if (loading) {
     return (
@@ -88,7 +88,7 @@ const UserDashboard = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
-      <header className="bg-white shadow-sm">
+      {/* <header className="bg-white shadow-sm mt-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
           <div className="flex items-center space-x-2">
             <FaTruck className="text-blue-600 text-2xl" />
@@ -102,7 +102,7 @@ const UserDashboard = () => {
             <span>Logout</span>
           </button>
         </div>
-      </header>
+      </header> */}
 
       {/* Dashboard Content */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -191,7 +191,9 @@ const UserDashboard = () => {
 
         {/* Tab Content */}
         <div className="bg-white rounded-xl shadow-md overflow-hidden">
-          {activeTab === "packages" && <UserPosts userId={loggedId} />}
+          {activeTab === "packages" && user?.role === "admin" && (
+            <UserPosts userId={loggedId} />
+          )}
           {activeTab === "quotes" && <Quotes userId={loggedId} />}
           {activeTab === "allQuotes" && user?.role === "admin" && (
             <Quotes adminMode={true} />

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { FaSearch, FaSpinner, FaEye, FaTrash } from "react-icons/fa";
+import { FaSearch, FaSpinner, FaTrash } from "react-icons/fa";
 import { FiPackage, FiGlobe, FiCalendar, FiUser } from "react-icons/fi";
 
-const UserQuotes = ({ userId, adminMode = false }) => {
+const UserQuotes = ({ loggedId, adminMode = false }) => {
   const [quotes, setQuotes] = useState([]);
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
@@ -15,7 +15,7 @@ const UserQuotes = ({ userId, adminMode = false }) => {
         const endpoint = adminMode
           ? "https://tracking-server-d6l5.onrender.com/get-quote"
           : `https://tracking-server-d6l5.onrender.com/getuser-quote/${
-              userId || userData?.result?.id
+              loggedId || userData?.result?.id
             }`;
 
         const response = await fetch(endpoint, {
@@ -38,7 +38,7 @@ const UserQuotes = ({ userId, adminMode = false }) => {
     };
 
     fetchQuotes();
-  }, [userId, adminMode]);
+  }, [loggedId, adminMode]);
 
   const filteredQuotes = quotes.filter((quote) => {
     const matchesSearch =
@@ -91,6 +91,7 @@ const UserQuotes = ({ userId, adminMode = false }) => {
       <div className="mb-6 flex flex-col md:flex-row justify-between items-start md:items-center space-y-4 md:space-y-0">
         <h2 className="text-xl font-semibold text-gray-800">
           {adminMode ? "All Quote Requests" : "My Quote Requests"}
+          {/* {!adminMode && "My Quote Requests"} */}
         </h2>
 
         <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4 w-full md:w-auto">

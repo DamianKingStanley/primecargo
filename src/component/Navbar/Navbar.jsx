@@ -3,12 +3,14 @@ import { Link, useLocation } from "react-router-dom";
 import { FaBars, FaTimes, FaUserCircle, FaShippingFast } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiLogOut } from "react-icons/fi";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [user, setUser] = useState(null);
   const location = useLocation();
+  const navigate = useNavigate();
 
   // Check auth status on mount and route change
   useEffect(() => {
@@ -48,6 +50,7 @@ const Navbar = () => {
   const handleLogout = () => {
     localStorage.removeItem("userInformation");
     setIsLoggedIn(false);
+    navigate("/user/login");
     setUser(null);
     closeMenu();
   };
