@@ -69,23 +69,26 @@ const OurClients = () => {
 
   const variants = {
     enter: (direction) => ({
-      x: direction > 0 ? 1000 : -1000,
+      x: direction > 0 ? 150 : -150,
       opacity: 0,
+      position: "absolute",
     }),
     center: {
       x: 0,
       opacity: 1,
+      position: "relative",
       transition: {
-        x: { type: "spring", stiffness: 300, damping: 30 },
-        opacity: { duration: 0.2 },
+        x: { type: "spring", stiffness: 200, damping: 25 },
+        opacity: { duration: 0.3 },
       },
     },
     exit: (direction) => ({
-      x: direction < 0 ? 1000 : -1000,
+      x: direction < 0 ? 150 : -150,
       opacity: 0,
+      position: "absolute",
       transition: {
-        x: { type: "spring", stiffness: 300, damping: 30 },
-        opacity: { duration: 0.2 },
+        x: { type: "spring", stiffness: 200, damping: 25 },
+        opacity: { duration: 0.3 },
       },
     }),
   };
@@ -114,7 +117,7 @@ const OurClients = () => {
           services.
         </motion.p>
 
-        <div className="relative h-96 md:h-80">
+        <div className="relative h-96 md:h-80 overflow-hidden">
           <AnimatePresence custom={direction} initial={false}>
             <motion.div
               key={currentReviewIndex}
@@ -123,7 +126,7 @@ const OurClients = () => {
               initial="enter"
               animate="center"
               exit="exit"
-              className="absolute inset-0 flex justify-center"
+              className="w-full h-full flex justify-center items-center"
             >
               <div className="bg-white p-8 rounded-xl shadow-lg max-w-2xl w-full h-full flex flex-col items-center">
                 <div className="relative mb-6">
