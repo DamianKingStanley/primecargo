@@ -95,7 +95,7 @@ const UserRegister = () => {
           Create your account
         </h2>
         <p className="mt-2 text-center text-sm text-gray-600">
-          Join Prime Cargo Logistics today
+          Join VastSea Logistics today
         </p>
       </div>
 
@@ -204,7 +204,7 @@ const UserRegister = () => {
               )}
             </div>
 
-            <div>
+            <div className="hidden">
               <label
                 htmlFor="role"
                 className="block text-sm font-medium text-gray-700"

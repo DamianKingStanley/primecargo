@@ -11,7 +11,7 @@ const WriteUpImage = () => {
   const content = {
     title: "Reliable. Efficient. Tailored for You.",
     paragraphs: [
-      "Trust Prime Cargo Logistics to simplify your shipping needs. Whether you're moving small packages or large freight, our priority is ensuring every delivery is smooth, secure, and on time.",
+      "Trust VastSea Logistics to simplify your shipping needs. Whether you're moving small packages or large freight, our priority is ensuring every delivery is smooth, secure, and on time.",
       "With our extensive network across air, sea, and land, combined with advanced technology, we provide flexible solutions that align perfectly with your requirements. From local errands to global distribution, we deliver with precision and care.",
     ],
     stats: [

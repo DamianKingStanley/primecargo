@@ -12,7 +12,7 @@ const OurClients = () => {
       name: "Emily Johnson",
       role: "Business Owner",
       review:
-        "Prime Cargo Logistics transformed our shipping process. Their reliability and professionalism are unmatched. Highly recommend!",
+        "VastSea Logistics transformed our shipping process. Their reliability and professionalism are unmatched. Highly recommend!",
       rating: 5,
       photo: pic4,
     },
@@ -36,7 +36,7 @@ const OurClients = () => {
       name: "James Carter",
       role: "Event Planner",
       review:
-        "Prime Cargo's estimated delivery time is always accurate, which helps me plan my events seamlessly. Great job!",
+        "VastSea's estimated delivery time is always accurate, which helps me plan my events seamlessly. Great job!",
       rating: 5,
       photo: pic1,
     },

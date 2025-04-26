@@ -64,7 +64,7 @@ const NotFoundPage = () => {
       </div>
 
       <div className="mt-8 text-center text-gray-500 text-sm">
-        <p>Need help? Contact our support team at support@primecargo.com</p>
+        <p>Need help? Contact our support team at support@VastSea.com</p>
       </div>
     </div>
   );

@@ -95,7 +95,7 @@ const Register = () => {
           Create your account- Admin
         </h2>
         <p className="mt-2 text-center text-sm text-gray-600">
-          Join Prime Cargo Logistics today
+          Join VastSea Logistics today
         </p>
       </div>
 

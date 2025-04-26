@@ -74,13 +74,14 @@ const Navbar = () => {
             onClick={closeMenu}
           >
             <FaShippingFast className="text-blue-600 text-2xl" />
+
             <motion.span
               className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-orange-500 bg-clip-text text-transparent"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5 }}
             >
-              PrimeCargo
+              VastSea<span className="text-base">carrier</span>
             </motion.span>
           </Link>
 

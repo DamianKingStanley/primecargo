@@ -17,8 +17,8 @@ const ContactUs = () => {
       icon: <FiMail className="text-blue-600 text-2xl" />,
       title: "Email Us",
       description: "Our support team will get back to you within 24 hours",
-      details: "support@primecargo.com",
-      action: "mailto:support@primecargo.com",
+      details: "support@VastSea.com",
+      action: "mailto:support@VastSea.com",
     },
     {
       icon: <FiPhone className="text-blue-600 text-2xl" />,

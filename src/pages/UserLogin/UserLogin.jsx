@@ -67,7 +67,7 @@ const UserLogIn = () => {
           <FiTruck className="h-12 w-12 text-blue-600" />
         </div>
         <h2 className="mt-6 text-center text-3xl  text-gray-900">
-          Prime Cargo Logistics
+          VastSea Logistics
         </h2>
         <p className="mt-2 text-center text-sm text-gray-600"> Sign In</p>
       </div>

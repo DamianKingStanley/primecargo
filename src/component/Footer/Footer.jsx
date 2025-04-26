@@ -19,7 +19,7 @@ const Footer = () => {
             <div className="flex items-center space-x-2">
               <FaShippingFast className="text-blue-500 text-2xl" />
               <span className="text-2xl font-bold bg-gradient-to-r from-blue-500 to-blue-400 bg-clip-text text-transparent">
-                PrimeCargo
+                VastSea
               </span>
             </div>
             <p className="text-gray-400">
@@ -73,7 +73,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  to="/services"
+                  to="/"
                   className="text-gray-400 hover:text-blue-400 transition-colors"
                 >
                   Services
@@ -161,7 +161,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <MdEmail className="text-blue-400" />
-                <p className="text-gray-400">info@primecargo.com</p>
+                <p className="text-gray-400">support@vastsea.com</p>
               </div>
             </div>
           </div>
@@ -198,7 +198,7 @@ const Footer = () => {
         {/* Bottom Footer */}
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-500 text-sm mb-4 md:mb-0">
-            &copy; {new Date().getFullYear()} Prime Cargo Logistics. All rights
+            &copy; {new Date().getFullYear()} VastSea Logistics. All rights
             reserved.
           </p>
           <div className="flex space-x-6">

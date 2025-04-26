@@ -55,7 +55,7 @@ const AboutUs = () => {
                 <span className="text-orange-400">Beyond Borders</span>
               </h1>
               <p className="text-lg md:text-xl leading-relaxed">
-                At Prime Cargo Logistics, we don't just move packages - we build
+                At VastSea Logistics, we don't just move packages - we build
                 trust, create connections, and deliver solutions that make a
                 real difference.
               </p>
@@ -87,8 +87,8 @@ const AboutUs = () => {
                 Who We Are
               </h2>
               <p className="text-lg text-gray-600 mb-6">
-                Since our inception, Prime Cargo Service has redefined logistics
-                by combining cutting-edge technology with human expertise. We're
+                Since our inception, VastSea Service has redefined logistics by
+                combining cutting-edge technology with human expertise. We're
                 not just experts in freight forwarding, storage, and
                 delivery—we're your strategic partners in global commerce.
               </p>

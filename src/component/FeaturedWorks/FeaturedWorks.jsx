@@ -108,7 +108,7 @@ const FeaturedWorks = () => {
               <span className="text-blue-600">Logistics Partner</span>
             </h2>
             <p className="text-lg text-gray-600 leading-relaxed">
-              At Prime Cargo Logistics, we're more than a shipping company—we're
+              At VastSea Logistics, we're more than a shipping company—we're
               your strategic partner in global commerce. With a legacy of
               excellence and a passion for innovation, we bridge distances to
               make the world smaller, one package at a time.
