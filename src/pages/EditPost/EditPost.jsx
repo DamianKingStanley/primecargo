@@ -26,7 +26,7 @@ const EditPost = () => {
     const fetchPost = async () => {
       try {
         const response = await axios.get(
-          `https://tracking-server-d6l5.onrender.com/post/${postId}`
+          `https://server.vastseacarrier.com/post/${postId}`
         );
         const {
           parcelHolder,
@@ -68,7 +68,7 @@ const EditPost = () => {
 
     try {
       const response = await axios.put(
-        `https://tracking-server-d6l5.onrender.com/posts/edit/${postId}`,
+        `https://server.vastseacarrier.com/posts/edit/${postId}`,
         {
           parcelHolder,
           currentLocation,

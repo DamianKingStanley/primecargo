@@ -20,7 +20,7 @@ const UserPosts = () => {
     const fetchPosts = async () => {
       try {
         const response = await axios.get(
-          `https://tracking-server-d6l5.onrender.com/posts/${loggedId}`
+          `https://server.vastseacarrier.com/posts/${loggedId}`
         );
         setPosts(response.data);
         setLoading(false);
@@ -43,7 +43,7 @@ const UserPosts = () => {
 
     try {
       await axios.delete(
-        `https://tracking-server-d6l5.onrender.com/posts/edit/${postToDelete}`,
+        `https://server.vastseacarrier.com/posts/edit/${postToDelete}`,
         {
           headers: {
             Authorization: `Bearer ${getUserToken}`,

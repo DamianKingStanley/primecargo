@@ -4,6 +4,7 @@ import { FaBars, FaTimes, FaUserCircle, FaShippingFast } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiLogOut } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
+import vsclogo from "../../assets/vslogo.PNG";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -27,7 +28,7 @@ const Navbar = () => {
     const fetchUserProfile = async (userData) => {
       try {
         const response = await fetch(
-          `https://tracking-server-d6l5.onrender.com/user/profile/${userData.result.id}`,
+          `https://server.vastseacarrier.com/user/profile/${userData.result.id}`,
           {
             headers: {
               Authorization: `Bearer ${userData.token}`,
@@ -73,7 +74,7 @@ const Navbar = () => {
             className="flex items-center space-x-2"
             onClick={closeMenu}
           >
-            <FaShippingFast className="text-blue-600 text-2xl" />
+            {/* <FaShippingFast className="text-blue-600 text-2xl" /> */}
 
             <motion.span
               className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-orange-500 bg-clip-text text-transparent"
@@ -81,7 +82,7 @@ const Navbar = () => {
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5 }}
             >
-              VastSea<span className="text-base">carrier</span>
+              <img src={vsclogo} alt="Logo" className="h-20 w-20" />
             </motion.span>
           </Link>
 

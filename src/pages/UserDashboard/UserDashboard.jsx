@@ -46,7 +46,7 @@ const UserDashboard = () => {
         const loggedId = userData?.result?.id;
 
         const response = await fetch(
-          `https://tracking-server-d6l5.onrender.com/user/profile/${loggedId}`,
+          `https://server.vastseacarrier.com/user/profile/${loggedId}`,
           {
             headers: {
               Authorization: `Bearer ${userData.token}`,

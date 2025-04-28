@@ -58,7 +58,7 @@ const UserUpdate = () => {
       const fetchUserProfile = async () => {
         try {
           const response = await fetch(
-            `https://tracking-server-d6l5.onrender.com/user/profile/${userId}`,
+            `https://server.vastseacarrier.com/user/profile/${userId}`,
             {
               headers: {
                 Authorization: `Bearer ${token}`,
@@ -106,7 +106,7 @@ const UserUpdate = () => {
     try {
       setIsLoading(true);
       const response = await fetch(
-        `https://tracking-server-d6l5.onrender.com/user/profile/${userId}/update`,
+        `https://server.vastseacarrier.com/user/profile/${userId}/update`,
         {
           method: "PUT",
           headers: {

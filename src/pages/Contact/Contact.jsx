@@ -1,15 +1,7 @@
 import React from "react";
-import {
-  FiMail,
-  FiPhone,
-  FiMapPin,
-  FiClock,
-  FiSend,
-  FiTruck,
-} from "react-icons/fi";
+import { FiMail, FiPhone, FiMapPin, FiClock, FiSend } from "react-icons/fi";
 import contactBanner from "../../assets/logistic-worker.png";
 import LocationMap from "../../component/LocationMap/LocationMap";
-import ContactForm from "../../component/ContactForm/ContactForm";
 
 const ContactUs = () => {
   const contactMethods = [
@@ -17,21 +9,21 @@ const ContactUs = () => {
       icon: <FiMail className="text-blue-600 text-2xl" />,
       title: "Email Us",
       description: "Our support team will get back to you within 24 hours",
-      details: "support@VastSea.com",
-      action: "mailto:support@VastSea.com",
+      details: "support@vastseacarrier.com",
+      action: "mailto:support@vastseacarrier.com",
     },
     {
       icon: <FiPhone className="text-blue-600 text-2xl" />,
       title: "Call Us",
       description: "Speak directly with our customer service team",
-      details: "+1 (800) 123-4567",
-      action: "tel:+18001234567",
+      details: "+44 (7777) 389698",
+      action: "tel:+447777389698",
     },
     {
       icon: <FiMapPin className="text-blue-600 text-2xl" />,
       title: "Visit Us",
       description: "Our headquarters are open Monday-Friday",
-      details: "123 Logistics Ave, New York, NY 10001",
+      details: "291 Brighton Road, South Croydon, CR2 6EQ, United Kingdom",
       action: "https://maps.google.com",
     },
   ];
@@ -110,11 +102,9 @@ const ContactUs = () => {
                     Headquarters
                   </h3>
                   <p className="text-gray-600">
-                    123 Logistics Avenue
+                    291 Brighton Road, South Croydon, CR2 6EQ,
                     <br />
-                    New York, NY 10001
-                    <br />
-                    United States
+                    United Kingdom
                   </p>
                 </div>
               </div>

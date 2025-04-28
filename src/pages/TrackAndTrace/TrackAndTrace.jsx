@@ -53,7 +53,7 @@ const TrackAndTrace = () => {
 
     try {
       const response = await axios.get(
-        `https://tracking-server-d6l5.onrender.com/track/${trackingCode}`
+        `https://server.vastseacarrier.com/track/${trackingCode}`
       );
       const details = response.data;
       setPackageDetails(details);

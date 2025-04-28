@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 // Function to generate a random code (mixture of letters and numbers) with "FRC-" prefix
 const generateCode = () => {
   const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789";
-  let code = "PC-";
+  let code = "VSC-";
   for (let i = 0; i < 8; i++) {
     const randomIndex = Math.floor(Math.random() * chars.length);
     code += chars[randomIndex];
@@ -58,29 +58,26 @@ const CreatePost = () => {
     };
 
     try {
-      const response = await fetch(
-        "https://tracking-server-d6l5.onrender.com/post",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${getUserToken()}`,
-          },
-          body: JSON.stringify({
-            userId,
-            parcelHolder,
-            code,
-            currentLocation,
-            takeOffLocation,
-            destination,
-            arrivalDate,
-            cargoCategory,
-            dateOfQuote,
-            location,
-            status,
-          }),
-        }
-      );
+      const response = await fetch("https://server.vastseacarrier.com/post", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${getUserToken()}`,
+        },
+        body: JSON.stringify({
+          userId,
+          parcelHolder,
+          code,
+          currentLocation,
+          takeOffLocation,
+          destination,
+          arrivalDate,
+          cargoCategory,
+          dateOfQuote,
+          location,
+          status,
+        }),
+      });
 
       if (response.ok) {
         // const data = await response.json();

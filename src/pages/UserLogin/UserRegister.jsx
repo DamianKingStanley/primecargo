@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { FiUser, FiMail, FiLock, FiKey, FiTruck } from "react-icons/fi";
+import { FiUser, FiMail, FiLock, FiKey } from "react-icons/fi";
+import vsclogo from "../../assets/vslogo.PNG";
 
 const UserRegister = () => {
   const navigate = useNavigate();
@@ -57,7 +58,7 @@ const UserRegister = () => {
     try {
       setIsLoading(true);
       const response = await fetch(
-        "https://tracking-server-d6l5.onrender.com/user/register",
+        "https://server.vastseacarrier.com/user/register",
         {
           method: "POST",
           headers: {
@@ -89,9 +90,9 @@ const UserRegister = () => {
     <div className="min-h-screen mt-6 bg-gradient-to-br from-blue-50 to-gray-100 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
         <div className="flex justify-center">
-          <FiTruck className="h-12 w-12 text-blue-600" />
+          <img src={vsclogo} alt="Logo" className="h-20 w-20" />
         </div>
-        <h2 className="mt-6 text-center text-3xl  text-gray-900">
+        <h2 className="mt-1 text-center text-3xl  text-gray-900">
           Create your account
         </h2>
         <p className="mt-2 text-center text-sm text-gray-600">

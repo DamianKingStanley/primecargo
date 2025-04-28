@@ -68,7 +68,7 @@ const ContactForm = () => {
       };
 
       const response = await fetch(
-        "https://tracking-server-d6l5.onrender.com/create-quote",
+        "https://server.vastseacarrier.com/create-quote",
         {
           method: "POST",
           headers: {

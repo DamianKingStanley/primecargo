@@ -16,7 +16,7 @@ const customIcon = L.icon({
 });
 
 const LocationMap = () => {
-  const position = [40.73061, -73.935242]; // Example: New York City
+  const position = [51.352071, -0.09832];
   return (
     <div style={{ height: "400px", width: "100%" }}>
       <MapContainer

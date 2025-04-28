@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import {
   FaInstagram,
   FaTwitter,
-  FaLinkedin,
   FaShippingFast,
+  FaFacebook,
 } from "react-icons/fa";
 import { MdEmail, MdPhone, MdLocationOn } from "react-icons/md";
 
@@ -35,18 +35,18 @@ const Footer = () => {
                 <FaInstagram className="text-xl" />
               </a>
               <a
-                href="https://www.twitter.com"
+                href="https://www.x.com"
                 className="text-gray-400 hover:text-blue-400 transition-colors"
                 aria-label="Twitter"
               >
                 <FaTwitter className="text-xl" />
               </a>
               <a
-                href="https://www.linkedin.com"
+                href="https://www.facebook.com"
                 className="text-gray-400 hover:text-blue-400 transition-colors"
-                aria-label="LinkedIn"
+                aria-label="facebook"
               >
-                <FaLinkedin className="text-xl" />
+                <FaFacebook className="text-xl" />
               </a>
             </div>
           </div>
@@ -152,16 +152,16 @@ const Footer = () => {
               <div className="flex items-start space-x-3">
                 <MdLocationOn className="text-blue-400 mt-1 flex-shrink-0" />
                 <p className="text-gray-400">
-                  123 Logistics Park, Industrial Area, New York City, USA
+                  291 Brighton Road, South Croydon, CR2 6EQ, United Kingdom
                 </p>
               </div>
               <div className="flex items-center space-x-3">
                 <MdPhone className="text-blue-400" />
-                <p className="text-gray-400">+1 (234) 567-8900</p>
+                <p className="text-gray-400">+44 (7777) 389698</p>
               </div>
               <div className="flex items-center space-x-3">
                 <MdEmail className="text-blue-400" />
-                <p className="text-gray-400">support@vastsea.com</p>
+                <p className="text-gray-400">support@vastseacarrier.com</p>
               </div>
             </div>
           </div>

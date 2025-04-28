@@ -13,8 +13,8 @@ const UserQuotes = ({ loggedId, adminMode = false }) => {
       try {
         const userData = JSON.parse(localStorage.getItem("userInformation"));
         const endpoint = adminMode
-          ? "https://tracking-server-d6l5.onrender.com/get-quote"
-          : `https://tracking-server-d6l5.onrender.com/getuser-quote/${
+          ? "https://server.vastseacarrier.com/get-quote"
+          : `https://server.vastseacarrier.com/getuser-quote/${
               loggedId || userData?.result?.id
             }`;
 
@@ -59,7 +59,7 @@ const UserQuotes = ({ loggedId, adminMode = false }) => {
     try {
       const userData = JSON.parse(localStorage.getItem("userInformation"));
       const response = await fetch(
-        `https://tracking-server-d6l5.onrender.com/quote/${quoteId}`,
+        `https://server.vastseacarrier.com/quote/${quoteId}`,
         {
           method: "DELETE",
           headers: {
